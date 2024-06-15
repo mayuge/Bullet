@@ -67,6 +67,7 @@
   box-shadow: inset 8px -8px 10px 0 rgba(200, 200, 200, 0.5),
   inset -8px 8px 10px 0 rgba(200, 200, 200, 0.5);
 }
+
 .circle::before{
   content: "";
   position: absolute;
