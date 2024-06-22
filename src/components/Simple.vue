@@ -1,8 +1,12 @@
 <script setup lang="ts">
+  import SimpleBelt from './SimpleBelt.vue'
 </script>
 
 <template>
-  <div class="container">
+<div class=container>
+    
+  
+  <div class="circle-container">
     <div class="circle">
       <div class="center"></div>
       <div class="hand-base" :style="{transform:'rotate('+360+'deg)'}">
@@ -20,9 +24,17 @@
         </div>
       </div>
     </div>
+    <div class="arms">
+      <div class="arm"></div>
+      <div class="arm"></div>
+    </div>
+
+
     <div class="shadow-circle"></div>
   </div>
-  <div class="arm"></div>
+    <SimpleBelt/>
+</div>
+  
 </template>
 
 
@@ -31,9 +43,24 @@
   position: relative; /* 子要素の絶対位置を基準にするために必要 */
   z-index: 100; /* armの下に来るように調整 */
 }
+.arms{
+  position:absolute;
+  top:155px;
+  display:flex;
+  width: 170px;
+  height:30px;
+}
 
-
-
+.arm{
+  width:10px;
+  height:30px;
+  background:#000000;
+  border-radius:0px 0px 50% 50%;
+}
+.circle-container{
+  width:170px;
+  height:170px;
+}
 .center {
   width: 7px;
   height: 7px;
