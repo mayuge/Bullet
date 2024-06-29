@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import SteelBelt from './SteelBelt.vue'
 </script>
 
 <template>
@@ -27,6 +28,7 @@
     <div class="shadow-topright-bar"></div>
     <div class="shadow-right-bar "></div>
   </div>
+    <SteelBelt/>
 </template>
 
 <style scoped>
@@ -35,6 +37,8 @@
 .container {
   position: relative; /* 子要素の絶対位置を基準にするために必要 */
   z-index: 100; /* armの下に来るように調整 */
+  width:190px;
+  height:150px;
 }
 
 .rect {
@@ -56,10 +60,10 @@
   border-radius:5px;
   top: 70px;
   left: 125px;
-  background-color: #32382e;
+  background-color: #b38900;
    background-image: url('@/assets/bo-play.png');
   z-index: 100;
-  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.4), 5px -5px 6px 0px rgba(0, 0, 0, 0.7);
+  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.4), 5px -5px 6px 0px rgba(0, 0, 0, 0.4);
 }
 
 .back-rect {

@@ -1,66 +1,62 @@
 <script setup lang="ts">
-  import SimpleBelt from './SimpleBelt.vue'
+import SimpleBelt from './SimpleBelt.vue'
+import { ref } from 'vue'
+
+const hanahudaColor = ref([
+  ['#2B2923'],
+  ['#1F1D1C'],
+  ['#78D244'],
+  ['#FCDBDE'],
+  ['#5B336F'],
+  ['#43A9C4'],
+  ['#FE4136'],
+  ['#FDAA4F'],
+  ['#FF362C'],
+  ['#F8F031'],
+  ['#FFA953'],
+  ['#389CB6'],
+  ['#693D7C'],
+])
 </script>
 
 <template>
-<div class=container>
-    
-  
-  <div class="circle-container">
-    <div class="circle">
-      <div class="center"></div>
-      <div class="hand-base" :style="{transform:'rotate('+360+'deg)'}">
-        <div class="time-hand"></div>
-      </div>
-      <div class="hand-base" :style="{transform:'rotate('+120+'deg)'}">
-        <div class="min-hand"></div>
-      </div>
-      <div v-for="i in 60" :key="i" class="scale" :style="{ transform: 'rotate(' + i * 6 + 'deg)' }">
-        <div v-if="i%5 == 0">
-          <div class="big-scales"></div>
+  <div class="container">
+    <div class="circle-container">
+      <div class="circle">
+        <div class="center"></div>
+        <div class="hand-base" :style="{transform:'rotate('+360+'deg)'}">
+          <div class="time-hand"></div>
         </div>
-        <div v-else>
-          <div class="scales"></div>
+        <div class="hand-base" :style="{transform:'rotate('+120+'deg)'}">
+          <div class="min-hand"></div>
+        </div>
+        <div v-for="i in 60" :key="i" class="scale" :style="{ transform: 'rotate(' + i * 6 + 'deg)' }">
+          <div v-if="i % 5 === 0" class="big-scales-container">
+            <div class="big-scales" :style="{ backgroundColor: hanahudaColor[Math.floor(i / 5)][0] }"></div>
+            <div class="big-scales" :style="{ backgroundColor: hanahudaColor[Math.floor(i / 5)][0] }"></div>
+          </div>
+          <div v-else>
+            <div class="scales"></div>
+          </div>
         </div>
       </div>
+      <div class="shadow-circle"></div>
     </div>
-    <div class="arms">
-      <div class="arm"></div>
-      <div class="arm"></div>
-    </div>
-
-
-    <div class="shadow-circle"></div>
-  </div>
     <SimpleBelt/>
-</div>
-  
+  </div>
 </template>
-
 
 <style scoped>
 .container {
-  position: relative; /* 子要素の絶対位置を基準にするために必要 */
-  z-index: 100; /* armの下に来るように調整 */
-}
-.arms{
-  position:absolute;
-  top:155px;
-  display:flex;
-  width: 170px;
-  height:30px;
+  position: relative;
+  z-index: 100;
 }
 
-.arm{
-  width:10px;
-  height:30px;
-  background:#000000;
-  border-radius:0px 0px 50% 50%;
+.circle-container {
+  width: 170px;
+  height: 170px;
 }
-.circle-container{
-  width:170px;
-  height:170px;
-}
+
 .center {
   width: 7px;
   height: 7px;
@@ -88,12 +84,19 @@
   width: 1px;
   height: 2px;
   background-color: #262626;
+  z-index: 30;
+}
+
+.big-scales-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .big-scales {
-  width: 1px;
-  height: 5px;
-  background-color: #bbbbbb;
+  margin-top: 2px;
+  width: 2px;
+  height: 8px;
 }
 
 .hand-base {
@@ -101,6 +104,7 @@
   height: 150px;
   position: absolute;
   top: 0;
+  z-index: 80;
 }
 
 .time-hand {
@@ -109,6 +113,7 @@
   margin-top: 35px;
   background-color: #ddddee;
   box-shadow: 1px -1px 2px -2px rgba(255, 255, 255, 0.7), 1px -1px 2px 0px rgba(0, 0, 0, 0.9);
+  z-index: 50;
 }
 
 .min-hand {

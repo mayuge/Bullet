@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import SmartBelt from './SmartBelt.vue'
 </script>
 
 <template>
@@ -9,7 +10,7 @@
     </div>
     <div class="shadow-circle"></div>
   </div>
-  <div class="arm"></div>
+  <SmartBelt/>
 </template>
 
 
@@ -18,7 +19,10 @@
 .container {
   position: relative; /* 子要素の絶対位置を基準にするために必要 */
   z-index: 100; /* armの下に来るように調整 */
+  width:200px;
+  height:190px;
 }
+
 .umbrella{
   margin-top:10px;
   width:90%;

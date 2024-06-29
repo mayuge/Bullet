@@ -25,11 +25,11 @@
 <style scoped>
   .box{
     width:200px;
-    height:200px;
+    height:700px;
   }
   .test-box{
     width:200px;
-    height:200px;
+    height:400px;
     background-color:#E60012;
   }
 </style>
