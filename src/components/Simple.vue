@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import SimpleBelt from './SimpleBelt.vue'
+import TopSimpleBelt from './TopSimpleBelt.vue'
 import { ref } from 'vue'
 
 const hanahudaColor = ref([
@@ -20,8 +21,8 @@ const hanahudaColor = ref([
 </script>
 
 <template>
+  <TopSimpleBelt/>
   <div class="container">
-    <div class="circle-container">
       <div class="circle">
         <div class="center"></div>
         <div class="hand-base" :style="{transform:'rotate('+360+'deg)'}">
@@ -41,13 +42,15 @@ const hanahudaColor = ref([
         </div>
       </div>
       <div class="shadow-circle"></div>
-    </div>
-    <SimpleBelt/>
   </div>
+  <SimpleBelt/>
 </template>
 
 <style scoped>
 .container {
+  margin-top:-10px;
+  width: 170px;
+  height: 170px;
   position: relative;
   z-index: 100;
 }

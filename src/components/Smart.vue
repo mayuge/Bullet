@@ -1,8 +1,10 @@
 <script setup lang="ts">
   import SmartBelt from './SmartBelt.vue'
+  import TopSmartBelt from './TopSmartBelt.vue'
 </script>
 
 <template>
+  <TopSmartBelt/>
   <div class="container">
     <div class="circle">
       <div class="displayZero">零二四五</div>
@@ -40,7 +42,6 @@
   text-stroke: 0.1px #fff;
 }
 
-
 .center {
   width: 7px;
   height: 7px;
@@ -54,7 +55,6 @@
   box-shadow: 1px -1px 2px -2px rgba(255, 255, 255, 0.7), 1px -1px 2px 0px rgba(0, 0, 0, 0.9);
 }
 
-
 .circle {
   width: 180px;
   height: 190px;
@@ -66,7 +66,7 @@
   position: absolute;
   z-index: 80;
   background-color: #111111;
-
+  margin-top: -10px;
   background-size: cover;
   box-shadow: inset 8px -8px 10px 0 rgba(200, 200, 200, 0.5),
   inset -8px 8px 10px 0 rgba(200, 200, 200, 0.5);
@@ -88,6 +88,7 @@
   width: 180px;
   height: 190px;
   border-radius: 20px;
+  margin-top:-10px;
   position: absolute;
   top: 1px;
   left: 1px;

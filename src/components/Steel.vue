@@ -1,8 +1,10 @@
 <script setup lang="ts">
   import SteelBelt from './SteelBelt.vue'
+  import TopSteelBelt from './TopSteelBelt.vue'
 </script>
 
 <template>
+  <TopSteelBelt/>
   <div class="container">
     <div class="rect">
       <div class="nail-box">
@@ -35,6 +37,7 @@
 @import '@/assets/font/fonts.css';
 
 .container {
+  margin-top:-30px;
   position: relative; /* 子要素の絶対位置を基準にするために必要 */
   z-index: 100; /* armの下に来るように調整 */
   width:190px;
@@ -61,7 +64,8 @@
   top: 70px;
   left: 125px;
   background-color: #b38900;
-   background-image: url('@/assets/bo-play.png');
+  box-shadow: inset 5px -5px 10px 0 rgba(0, 0, 0, 0.5);
+  background-image: url('@/assets/bo-play.png');
   z-index: 100;
   box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.4), 5px -5px 6px 0px rgba(0, 0, 0, 0.4);
 }
@@ -119,21 +123,25 @@
 }
 
 .mini-circle{
-  width: 50px;
-  height:50px;
-  background-color:#ffffff;
+  width: 40px;
+  height:40px;
+  background-color:#999999;
   position:absolute;
   border-radius:50%;
   z-index:100;
   left:125px;
   top:10px;
+  background-image: url(@/assets/iron-grip.png);
+  background-size: 20px 20px; 
+  border: 5px solid rgba(0, 0, 0, 0.3);
+  box-shadow: inset 2px -2px 10px 0 rgba(0, 0, 0, 0.7),
+  5px -5px 10px -8px rgba(255, 255, 255, 0.7), 3px -4px 6px 0px rgba(0, 0, 0, 0.9);
 }
 
 .nail-box{
   margin-top:5px;
   display:flex;
 }
-
 
 .nail{
   width:10px;
@@ -155,6 +163,7 @@
   border: solid 1px #191c17;
   box-shadow: inset 3px -4px 10px 0 rgba(0, 0, 0, 0.8);
 }
+
 .week-box{
 /*  心電図的な感じにする*/
   width:80px;

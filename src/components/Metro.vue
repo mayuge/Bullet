@@ -1,8 +1,13 @@
 <script setup lang="ts">
   import LineMap from './LineMap.vue'
-</script>
+  import MetroBelt
+   from './MetroBelt.vue'
+  import TopMetroBelt
+   from './TopMetroBelt.vue'
 
+</script>
 <template>
+  <TopMetroBelt/>
   <div class="container">
     <div class="circle">
       <div class="incircle">
@@ -11,13 +16,16 @@
     </div>
     <div class="shadow-circle"></div>
   </div>
-  <div class="arm"></div>
+  <MetroBelt/>
 </template>
 
 <style scoped>
 .container {
+  margin-top:-25px;
   position: relative; /* 子要素の絶対位置を基準にするために必要 */
   z-index: 100; /* armの下に来るように調整 */
+  width:210px;
+  height:210px;
 }
 
 .circle {

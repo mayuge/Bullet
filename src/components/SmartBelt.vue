@@ -27,23 +27,21 @@ import Heart from '../assets/Heart.vue'
 </template>
 
 <style scoped>
-  .heart {
-    width:30px;
-    height:30px;
-    transform:rotate(180deg);
-    margin: 0 25px;
-
-  }
+.heart {
+  width:30px;
+  height:30px;
+  transform:rotate(180deg);
+  margin: 0 25px;
+}
 .arms {
-  margin-top: -12px;
+  margin-top: -22px;
   display: flex;
   width: 180px;
   height: 30px;
   justify-content: space-between;
-
 }
 .belt-box {
-  margin-top: -15px;
+  margin-top: -24px;
   width: 180px;
   height: 500px;
   display: flex;

@@ -6,23 +6,28 @@
 </script>
 
 <template>
-  <h1><div>a</div></h1>
-  <div class ="box" >
-    <Simple/>
+  <div class="container">
+    <div class ="box" >
+      <Simple/>
+    </div>
+    <div class="box">
+      <Smart/>
+    </div>
+    <div class="box">
+      <Steel/>
+    </div>
+    <div class="box">
+      <Metro/>
+    </div>
   </div>
-  <div class="box">
-    <Smart/>
-  </div>
-  <div class="box">
-    <Steel/>
-  </div>
-  <div class="box">
-    <Metro/>
-  </div>
-  <div class="test-box "></div>
+
+
 </template>
 
 <style scoped>
+  .container{
+    display:flex;
+  }
   .box{
     width:200px;
     height:700px;
@@ -32,5 +37,6 @@
     height:400px;
     background-color:#E60012;
   }
+
 </style>
 
