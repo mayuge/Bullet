@@ -2,15 +2,19 @@
 </script>
 
 <template>
-  <div class="top-holizonal-stick"></div>
-  <div class="vertical-sticks">
-    <div class="vertical-stick"></div>
-    <div class="vertical-stick"></div>
+  <div class="buckle-box">
+    <div class="top-holizonal-stick"></div>
+    <div class="buckle">
+      <div class="vertical-stick"></div>
+      <div class="vertical-stick"></div>
+      <div class="vertical-stick"></div>
+    </div>
+    <div class="holizonal-stick"></div>
   </div>
-  <div class="holizonal-stick"></div>
+
   <div class="belt-box">
     <div class="belt"></div>
-    <div class="stitch"></div>
+      <div class="stitch"></div>
   </div>
   <div class="arms">
     <div class="arm"></div>
@@ -19,25 +23,29 @@
 </template>
 
 <style scoped>
-.vertical-sticks{
-  margin-top:-5px;
-  display: flex;
-  justify-content: space-between;
-}
 .vertical-stick{
-  width: 10px;
-  height: 50px;
-  margin:0px 60px 0px 32px;
-  background: #555555;
-  border-radius: 50%;
-  box-shadow: 3px -3px 6px -6px rgba(255, 255, 255, 0.6), 3px -3px 6px 3px rgba(0, 0, 0, 0.5);
-  background-image: url('@/assets/wood.png');
-  z-index: 110;
+  width:10px;
+  height:40px;
+  background-color:#000000;
+  box-shadow: 2px -2px 3px -3px rgba(255, 255, 255, 0.5), 2px 0px 3px 0px rgba(0, 0, 0, 0.9);
 }
+.buckle-box{
+  margin-left:40px;
+}
+
+.buckle{
+  width:90px;
+  height:40px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  justify-content:space-between;
+}
+
 .holizonal-stick {
-  width: 100px;
+  width: 90px;
   height: 10px;
-  margin: -5px 0px 0px 35px;
+  margin: -5px 0px 0px 0px;
   background: #555555;
   border-radius: 0px 0px 50% 50%;
   background-image: url('@/assets/wood.png');
@@ -46,9 +54,9 @@
   position: relative; /* Ensure it's on top */
 }
 .top-holizonal-stick {
-  width: 100px;
+  width: 90px;
   height: 10px;
-  margin: 10px 0px 0px 35px;
+  margin: 10px 0px 0px 0px;
   background: #555555;
   border-radius:50% 50% 0px 0px;
   background-image: url('@/assets/wood.png');

@@ -3,3 +3,9 @@
   font-family:'zero';
   src:url('fgzerorabaulfont.otf') format('opentype');
 }
+@font-face{
+  font-family:'title';
+  src:url('Makinas-4-Flat.otf') format('opentype');
+}
+
+

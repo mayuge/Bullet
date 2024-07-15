@@ -2,6 +2,9 @@
 import SimpleBelt from './SimpleBelt.vue'
 import TopSimpleBelt from './TopSimpleBelt.vue'
 import { ref } from 'vue'
+import { useStore } from '../stores/store'
+const store = useStore()
+
 
 const hanahudaColor = ref([
   ['#2B2923'],
@@ -25,12 +28,16 @@ const hanahudaColor = ref([
   <div class="container">
       <div class="circle">
         <div class="center"></div>
-        <div class="hand-base" :style="{transform:'rotate('+360+'deg)'}">
+        <div class="hand-base" :style="{transform:'rotate('+store.secondAngle+'deg)'}">
+          <div class="second-hand"></div>
+        </div>
+        <div class="hand-base" :style="{transform:'rotate('+store.hourAngle+'deg)'}">
           <div class="time-hand"></div>
         </div>
-        <div class="hand-base" :style="{transform:'rotate('+120+'deg)'}">
+        <div class="hand-base" :style="{transform:'rotate('+store.minuteAngle+'deg)'}">
           <div class="min-hand"></div>
         </div>
+
         <div v-for="i in 60" :key="i" class="scale" :style="{ transform: 'rotate(' + i * 6 + 'deg)' }">
           <div v-if="i % 5 === 0" class="big-scales-container">
             <div class="big-scales" :style="{ backgroundColor: hanahudaColor[Math.floor(i / 5)][0] }"></div>
@@ -112,8 +119,8 @@ const hanahudaColor = ref([
 
 .time-hand {
   width: 2px;
-  height: 50px;
-  margin-top: 35px;
+  height: 45px;
+  margin-top: 40px;
   background-color: #ddddee;
   box-shadow: 1px -1px 2px -2px rgba(255, 255, 255, 0.7), 1px -1px 2px 0px rgba(0, 0, 0, 0.9);
   z-index: 50;
@@ -121,10 +128,19 @@ const hanahudaColor = ref([
 
 .min-hand {
   width: 2px;
-  height: 70px;
-  margin-top: 15px;
+  height: 65px;
+  margin-top: 20px;
   background-color: #ddddee;
   box-shadow: 1px -1px 2px -2px rgba(255, 255, 255, 0.7), 1px -1px 2px 0px rgba(0, 0, 0, 0.9);
+}
+
+.second-hand{
+  width: 1.1px;
+  height: 75px;
+  margin-top: 15px;
+  background-color: #008803;
+  box-shadow: 1px -1px 2px -2px rgba(255, 255, 255, 0.7), 1px -1px 2px 0px rgba(0, 0, 0, 0.9);
+  z-index:60;
 }
 
 .circle {

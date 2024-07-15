@@ -20,7 +20,7 @@
 <style scoped>
 .vertical-stick{
   width:10px;
-  height:85px;
+  height:75px;
   border-radius:15px;
   margin: 0px -10px 0px -10px;
   background-color: hsl(0, 0%, 90%);
@@ -53,7 +53,7 @@
   margin-top:10px;
   padding-left: 5px;
   width:200px;
-  height:80px;
+  height:60px;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -83,7 +83,7 @@
 
 .belt {
   width: 100px;
-  height: 350px;
+  height: 330px;
   background-color: #0CB2B4;
   display: flex;
   justify-content: center;
@@ -92,13 +92,13 @@
   box-shadow: 5px -5px 6px -6px rgba(255, 255, 255, 0.7), 5px 0px 6px 0px rgba(0, 0, 0, 0.6);
   z-index: 30;
   background-image: url('@/assets/dimension.png');
-  border-right:1px #eeeeee solid;
+  border:1px #eeeeee solid;
 }
 
 .inner-belt {
   margin-top:10px;
   width: 75px;
-  height: 320px;
+  height: 300px;
   background-color: #1e281c;
   background-image: url('@/assets/mizutama.svg');
   border-left: #E834CD 5px solid;

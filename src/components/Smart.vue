@@ -1,13 +1,15 @@
 <script setup lang="ts">
   import SmartBelt from './SmartBelt.vue'
   import TopSmartBelt from './TopSmartBelt.vue'
+  import { useStore } from '../stores/store'
+  const store = useStore()
 </script>
 
 <template>
   <TopSmartBelt/>
   <div class="container">
     <div class="circle">
-      <div class="displayZero">零二四五</div>
+      <div class="displayZero">{{store.kanjiTime}}</div>
         <img src="@/assets/umbrella.svg"class="umbrella">
     </div>
     <div class="shadow-circle"></div>
